@@ -1,0 +1,104 @@
+.user_name,
+.user_password,
+.user_code{
+	position: relative;
+	margin-top: 5%;
+}
+
+.user_name,
+.user_password,
+.user_code:active{
+	outline: none;
+}
+
+#userName,
+#userPassword,
+#userCode{
+	height: 60px;
+	line-height: 60px;
+	border: 0;
+	border-radius: 0;
+	font-size: 16px;
+	width: 100%;
+	border-top: 0;
+	border-bottom: 2px solid #c9c9c9;
+	outline: none;
+	padding-left: 10%;
+}
+
+#userCode{
+	width: 50%;
+}
+
+.user_name label{
+	position: absolute;
+	left: 3%;
+	line-height: 60px;
+}
+
+.user_password label {
+	position: absolute;
+	left: 3%;
+	line-height: 60px;
+}
+
+.user_name i{
+	font-size: 20px;
+	color: #c9c9c9;
+}
+
+.user_password i{
+	font-size: 20px;
+	color: #c9c9c9;
+}
+
+.user_code i{
+	font-size: 20px;
+	color: #c9c9c9;
+}
+
+.user_code>img{
+	width: 49%;
+	height: 60px;
+	border: 1px solid;
+}
+
+#loginBtn{
+	width: 100%;
+	border: none;
+	height: 50px;
+	border-radius: 25px;
+	margin-top: 8%;
+}
+
+.text_rip{
+	margin: 8% 0;
+}
+
+.text_rip>.lf{
+	float: left;
+}
+
+.text_rip>.lr{
+	float: right;
+}
+
+.other_login{
+	margin-top: 8%;
+}
+
+.other_login>p{
+	margin-top: 8%;
+	text-align: center;
+}
+
+.other_login>.icon{
+	margin-top: 8%;
+	margin-bottom: 8%;
+}
+
+.other_login>.icon>i{
+	font-size: 50px;
+	margin: 0 10.3%;
+	cursor: pointer;
+}
