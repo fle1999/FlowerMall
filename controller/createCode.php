@@ -10,31 +10,33 @@ class Captcha{
 	// 创建验证码
 	public function yzm(){
 		// 1.创建画布
-		$im = imagecreatetruecolor($this->width, $this->height);
-		// 2.绘制颜色
-		$white = imagecolorallocate($im, 255, 255, 255);
-		$rand_color = imagecolorallocate($im, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
+		$img = imagecreatetruecolor($this->width, $this->height);
+		// 2.定义画布背景颜色
+		$bgcolor = imagecolorallocate($img, 255, 255, 255);
+		$rand_color = imagecolorallocate($img, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
 		// 3.填充背景 默认是黑色
-		imagefill($im, 0, 0, $white);
+		imagefill($img, 0, 0, $bgcolor);
 		// 4.绘制验证码
 		putenv('GDFONTPATH=' . realpath('.'));
 		$font = '../public/src/font/simkai.ttf';//字体文件
 		$x = 11;
 		$word = "";
+		$content = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";//定义验证码的内容
 		for ($i = 0; $i < 4; $i++) {
-			$f = 30;
-			$rand_num = mt_rand(0, 9);
+			$fontsize = 30;	//字体间隔
+			$rand_num = mt_rand(0, 9);	//每一字体随机数
 			$word .= $rand_num;
-			$rand_color = imagecolorallocate($im, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
-			imagettftext($im, 20, mt_rand(-20, 20), $f * $i + $x, 30, $rand_color, $font, $rand_num);
+			$rand_color = imagecolorallocate($img, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
+			imagettftext($img, 20, mt_rand(-20, 20), $fontsize * $i + $x, 30, $rand_color, $font, $rand_num);
 		}
 		// 把验证码存入session
 		// Session::put('yzm',$word);
 		// 5.页面输出
 		header("content-type:image/png");
-		imagepng($im);
+		imagepng($img);
 		//销毁图片
-		imagedestroy($im);
-		}
+		imagedestroy($img);
+		return $word;
 	}
+}
 ?>
