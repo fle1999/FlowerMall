@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<link rel="stylesheet" href="../../src/zui/dist/css/zui.min.css">
+		<script src="../../src/zui/dist/lib/jquery/jquery.js"></script>
+		<script src="../../src/zui/dist/js/zui.min.js"></script>
+		<link  rel="stylesheet" href="../../css/common/theme.css" type="text/css"/>
+		<link rel="stylesheet" href="../../css/common/panel.css?time=202212052317" type="text/css"/>
+		<link href="../../css/home/register.css?time=202212052317" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel">
+				<div class="panel-title">
+					<h1>注册</h1>
+				</div>
+				<div class="panel-body">
+					<div class="logo"></div>
+					<div class="user_name">
+						<input id="userName" type="text" placeholder="用户名">
+						<label><i class="icon icon-user"></i></label>
+					</div>
+					<div class="user_password">
+						<input id="userPassword" type="password" placeholder="密码">
+						<label><i class="icon icon-key"></i></label>
+					</div>
+					<div class="user_re_password">
+						<input id="userRePassword" type="password" placeholder="密码">
+						<label><i class="icon icon-key"></i></label>
+					</div>
+					<div class="user_email">
+						<input id="userEmail" type="email" placeholder="邮箱">
+						<label><i class="icon icon-envelope-alt"></i></label>
+					</div>
+					<div class="user_phone">
+						<input id="userPhone" type="text" placeholder="手机" maxlength=11>
+						<label><i class="icon icon-phone"></i></label>
+					</div>
+					<div class="user_code">
+						<input id="userCode" type="text" placeholder="验证码">
+						<img id="code" src="../../../controller/common/yzmController.php" onclick="this.src = '../../../controller/common/yzmController.php?'+Math.random()" />
+					</div>
+					<div class="text_rip">
+						<a href="./validation.html" class="lf">忘记密码</a>
+						<a href="./login.html" class="lr">已有账号</a>
+					</div>
+					<button class="btn" id="loginBtn" type="button">登录</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		$('.user_phone input')[0].onkeyup=function(){
+			var str  = $('.user_phone>input:eq(0)').val();
+			$('.user_phone>input:eq(0)').val(str.replace(/[^\d]/g,''));
+		}
+	</script>
+</html>

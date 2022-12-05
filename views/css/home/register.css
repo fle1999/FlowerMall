@@ -1,8 +1,23 @@
+.panel{
+	margin: 5% auto;
+}
+
+.logo{
+	background: url("../../img/common/logo.webp") no-repeat;
+	width: 50%;
+	height: 170px;
+	background-size: 100%;
+	margin: 0 auto;
+}
+
 .user_name,
 .user_password,
+.user_re_password,
+.user_email,
+.user_phone,
 .user_code{
 	position: relative;
-	margin-top: 5%;
+	margin-top: 3%;
 }
 
 .user_name,
@@ -13,9 +28,12 @@
 
 #userName,
 #userPassword,
+#userRePassword,
+#userEmail,
+#userPhone,
 #userCode{
-	height: 60px;
-	line-height: 60px;
+	height: 55px;
+	line-height: 55px;
 	border: 0;
 	border-radius: 0;
 	font-size: 16px;
@@ -27,7 +45,7 @@
 }
 
 #userCode{
-	width: 50%;
+	width: 60%;
 }
 
 .user_name label{
@@ -37,6 +55,24 @@
 }
 
 .user_password label {
+	position: absolute;
+	left: 3%;
+	line-height: 60px;
+}
+
+.user_email label{
+	position: absolute;
+	left: 3%;
+	line-height: 60px;
+}
+
+.user_re_password label{
+	position: absolute;
+	left: 3%;
+	line-height: 60px;
+}
+
+.user_phone label{
 	position: absolute;
 	left: 3%;
 	line-height: 60px;
@@ -52,15 +88,30 @@
 	color: #c9c9c9;
 }
 
+.user_re_password i{
+	font-size: 20px;
+	color: #c9c9c9;
+}
+
+.user_email i{
+	font-size: 20px;
+	color: #c9c9c9;
+}
+
+.user_phone i{
+	font-size: 20px;
+	color: #c9c9c9;
+}
+
 .user_code i{
 	font-size: 20px;
 	color: #c9c9c9;
 }
 
 .user_code>img{
-	width: 49%;
+	/* width: 49%; */
 	height: 60px;
-	border: 1px solid;
+	/* border: 1px solid; */
 }
 
 #loginBtn{
@@ -81,24 +132,4 @@
 
 .text_rip>.lr{
 	float: right;
-}
-
-.other_login{
-	margin-top: 8%;
-}
-
-.other_login>p{
-	margin-top: 8%;
-	text-align: center;
-}
-
-.other_login>.icon{
-	margin-top: 8%;
-	margin-bottom: 8%;
-}
-
-.other_login>.icon>i{
-	font-size: 50px;
-	margin: 0 10.3%;
-	cursor: pointer;
 }

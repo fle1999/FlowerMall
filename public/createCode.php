@@ -18,16 +18,16 @@ class Captcha{
 		imagefill($img, 0, 0, $bgcolor);
 		// 4.绘制验证码
 		putenv('GDFONTPATH=' . realpath('.'));
-		$font = '../public/src/font/simkai.ttf';//字体文件
+		$font = '../../views/src/font/simkai.ttf';//字体文件
 		$x = 11;
 		$word = "";
 		$content = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";//定义验证码的内容
 		for ($i = 0; $i < 4; $i++) {
-			$fontsize = 30;	//字体间隔
+			$font_interval = 30;	//字体间隔
 			$rand_num = mt_rand(0, 9);	//每一字体随机数
 			$word .= $rand_num;
 			$rand_color = imagecolorallocate($img, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
-			imagettftext($img, 20, mt_rand(-20, 20), $fontsize * $i + $x, 30, $rand_color, $font, $rand_num);
+			imagettftext($img, 20, mt_rand(-20, 20), $font_interval * $i + $x, 30, $rand_color, $font, $rand_num);
 		}
 		// 把验证码存入session
 		// Session::put('yzm',$word);
